@@ -1,0 +1,34 @@
+print('Bem-vindo à Loja Braccini!')
+valorproduto = float(input('Insira o valor do produto: '))
+qtd = int(input('Insira a quantidade de itens: '))
+preco = valorproduto * qtd
+
+if qtd <= 4:
+    desconto = 0
+    print('Você solicitou {} unidades do produto.'.format(qtd))
+    print('O total de sua compra é R$ {}'.format(preco))
+    print('Seu desconto é de {}%'.format(desconto))
+
+elif qtd >= 5 and qtd <= 19:
+    preco = qtd * valorproduto
+    desconto = preco - preco * 0.03
+    print('Você solicitou {} unidades do produto, custando R$ {} cada.'.format(qtd, valorproduto))
+    print('O total de sua compra é de R$ {:.2f}'.format(preco))
+    print('Total com desconto é de R$ {:.2f}. (Desconto de 3%)'.format(desconto))
+
+elif qtd >= 20 and qtd <= 99:
+    preco = qtd * valorproduto
+    desconto = preco - preco * 0.06
+    print('Você solicitou {} unidades do produto, custando R$ {} cada.'.format(qtd, valorproduto))
+    print('O total de sua compra é de R$ {:.2f}'.format(preco))
+    print('Total com desconto é de R$ {:.2f}. (Desconto de 6%)'.format(desconto))
+
+else:
+    preco = qtd * valorproduto
+    desconto = preco - preco * 0.1
+    print('Você solicitou {} unidades do produto, custando R$ {} cada.'.format(qtd, valorproduto))
+    print('O total de sua compra é de R$ {:.2f}'.format(preco))
+    print('Total com desconto é de R$ {:.2f}. (Desconto de 10%)'.format(desconto))
+
+if qtd == 0 or valorproduto == 0:
+    print('O valor unitário ou do produto não pode ser igual a 0, verifique os dados que digitou.')
